@@ -20,7 +20,9 @@ public class ParticleEffect implements LocationEffect{
 	private float gravity = 0;
 	private int maxAge = 0;
 	private float scale = 0;
-	private float red = 0;
+	private int red = 0;
+	private float green = 0;
+	private int blue = 0;
 	private ParticleType pt;
 
 	public ParticleEffect(Object...args) {
@@ -30,6 +32,8 @@ public class ParticleEffect implements LocationEffect{
 		this.maxAge = (Integer) args[3];
 		this.scale = (Integer) args[4];
 		this.red = (Integer) args[5];
+		this.green = (Integer) args[6];
+		this.blue = (Integer) args[7];
 	}
 	
 	@Override
@@ -41,7 +45,9 @@ public class ParticleEffect implements LocationEffect{
 		p.setMaxAge(maxAge);
 		p.setScale(scale);
 		p.setRange(100);
-		p.setRed(1);
+		p.setRed(red);
+		p.setGreen(green);
+		p.setBlue(blue);
 		p.spawn();
 	}
 
